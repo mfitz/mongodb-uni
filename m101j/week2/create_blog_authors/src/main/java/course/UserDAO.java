@@ -87,7 +87,7 @@ public class UserDAO {
         // XXX look in the user collection for a user that has this username
         // assign the result to the user variable.
         Bson filter = eq("_id", username);
-        user = usersCollection.find().filter(filter).first();
+        user = usersCollection.find(filter).first();
 
         if (user == null) {
             System.out.println("User not in database");
